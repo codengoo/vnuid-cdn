@@ -2,6 +2,7 @@ package middlewares
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/golang-jwt/jwt/v5"
@@ -9,8 +10,16 @@ import (
 
 const (
 	tokenHeader = "Authorization"
-	jwtSecret   = "your-secret-key"
 )
+
+var jwtSecret string
+
+func init() {
+	jwtSecret = os.Getenv("JWT_KEY")
+	if jwtSecret == "" {
+		jwtSecret = "your-secret-key"
+	}
+}
 
 func VerifyToken(c *fiber.Ctx) error {
 	tokenString := c.Get(tokenHeader)

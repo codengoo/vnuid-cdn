@@ -18,6 +18,7 @@ COPY --from=builder /app/server .
 
 # Expose the application port
 ENV PORT=8888
+ENV JWT_KEY=your-secret-key
 EXPOSE 8888
 
 # Run the server

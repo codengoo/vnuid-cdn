@@ -6,7 +6,15 @@ import (
 	"vnuid_cdn/routers"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/joho/godotenv"
 )
+
+func init() {
+	// Load environment variables from .env file
+	if err := godotenv.Load(); err != nil {
+		log.Println("No .env file found")
+	}
+}
 
 func main() {
 	// Get port from environment variable, default to 8080
