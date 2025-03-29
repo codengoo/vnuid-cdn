@@ -24,5 +24,8 @@ func SetupRoutes(app *fiber.App) {
 
 	// Upload route with JWT middleware
 	api.Post("/upload", middlewares.VerifyToken, services.UploadHandler)
+	api.Delete("/delete/:uuid", middlewares.VerifyToken, services.DeleteHandler)
+	api.Delete("/delete", middlewares.VerifyToken, services.DeleteMultipleHandler)
+
 	app.Static("/cdn", uploadDir)
 }
