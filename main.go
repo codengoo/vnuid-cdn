@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"os"
-	"vnuid_cdn/routers"
+	"vnuid-cdn/routers"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
