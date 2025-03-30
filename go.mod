@@ -1,4 +1,4 @@
-module vnuid_cdn
+module vnuid-cdn
 
 go 1.23.4
 

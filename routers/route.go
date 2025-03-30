@@ -2,8 +2,8 @@ package routers
 
 import (
 	"os"
-	"vnuid_cdn/middlewares"
-	"vnuid_cdn/services"
+	"vnuid-cdn/middlewares"
+	"vnuid-cdn/services"
 
 	"github.com/gofiber/fiber/v2"
 )
